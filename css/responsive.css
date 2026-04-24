@@ -1,0 +1,360 @@
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Nyra Website
+   Breakpoints: 1100 · 1024 · 820 · 600 · 420
+   ═══════════════════════════════════════════════════════ */
+
+/* ── 1100px: tighten container & nav ─────────────────── */
+@media (max-width: 1100px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+/* ── 1024px: collapse 2-col layouts ──────────────────── */
+@media (max-width: 1024px) {
+  .domain-grid,
+  .birthchart-layout,
+  .palmistry-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .birthchart-layout {
+    gap: 36px;
+  }
+
+  .planet-bar {
+    flex-wrap: wrap;
+  }
+
+  .planet-cell {
+    min-width: 33.33%;
+  }
+
+  .zodiac-grid,
+  .library-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tarot-stage-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tarot-cards-col {
+    height: 220px;
+  }
+
+  .card-container {
+    width: 160px;
+    height: 220px;
+  }
+
+  .tarot-cta-col {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ── 820px: hamburger, full-width sections ────────────── */
+@media (max-width: 820px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Logo: slightly smaller on tablet */
+  .logo-img {
+    height: 28px;
+  }
+
+  .logo-wordmark {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .hero {
+    padding: 80px 0 32px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .hero-sub {
+    font-size: 0.9375rem;
+  }
+
+  .zodiac-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wardrobe-timeline,
+  .big-three-bar,
+  .footer-grid,
+  .library-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .big-three-cell {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .info-tabs {
+    flex-wrap: wrap;
+  }
+
+  .info-tab {
+    flex: 1 1 50%;
+  }
+
+  /* Upload area smaller on tablet */
+  .upload-area {
+    min-height: 160px;
+  }
+
+  /* Horoscope panel full-width */
+  .horoscope-panel {
+    max-width: 100%;
+  }
+}
+
+/* ── 600px: phone landscape / small tablets ───────────── */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Hide dense planet bar on small screens */
+  .planet-bar {
+    display: none;
+  }
+
+  .zodiac-grid,
+  .library-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .zodiac-cell {
+    padding: 16px 8px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .hero {
+    padding: 72px 0 24px;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    padding: 0 16px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero-glyphs {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .hero-drop-line {
+    height: 48px;
+  }
+
+  /* Tarot */
+  .tarot-stage-split {
+    gap: 24px;
+  }
+
+  .tarot-cards-col {
+    height: 200px;
+  }
+
+  .card-container {
+    width: 140px;
+    height: 200px;
+  }
+
+  /* Wardrobe */
+  .wardrobe-card {
+    padding: 24px 20px;
+  }
+
+  .wardrobe-colour-row,
+  .subreading,
+  .wardrobe-tag-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Birth chart planet table */
+  .planet-row {
+    grid-template-columns: 26px 1fr 1fr;
+  }
+
+  .planet-row span:nth-child(4),
+  .planet-row span:nth-child(5) {
+    display: none;
+  }
+
+  /* Birth chart SVG */
+  #natal-chart-svg {
+    max-width: 100%;
+  }
+
+  /* Footer */
+  .footer-grid {
+    gap: 28px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom {
+    font-size: 0.5rem;
+    padding: 14px 20px;
+  }
+
+  /* Modals */
+  .birth-modal-panel {
+    width: calc(100vw - 32px);
+    max-width: 100%;
+    padding: 28px 20px;
+  }
+
+  /* Place autocomplete max-height smaller */
+  .place-suggestions {
+    max-height: 160px;
+  }
+}
+
+/* ── 420px: very small phones ─────────────────────────── */
+@media (max-width: 420px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .logo-img {
+    height: 24px;
+  }
+
+  .logo-wordmark {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 10vw, 2.5rem);
+  }
+
+  .hero-sub {
+    font-size: 0.875rem;
+  }
+
+  .section-headline {
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+  }
+
+  .zodiac-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .zodiac-cell {
+    padding: 12px 4px;
+    gap: 4px;
+  }
+
+  .zodiac-glyph {
+    font-size: 1.1rem;
+  }
+
+  .zodiac-name {
+    font-size: 0.45rem;
+  }
+
+  .tarot-stage-split {
+    gap: 16px;
+  }
+
+  /* Keep both logo pieces on one line */
+  .logo {
+    gap: 6px;
+  }
+
+  /* Subreading gap */
+  .subreading {
+    gap: 16px;
+  }
+
+  /* Big three cells */
+  .big-three-cell {
+    padding: 14px 10px;
+  }
+
+  .big-three-value {
+    font-size: 0.9rem;
+  }
+
+  /* Horoscope sign */
+  .horoscope-sign-name {
+    font-size: 2rem;
+  }
+
+  /* Info tabs: 2 per row */
+  .info-tab {
+    flex: 1 1 50%;
+    font-size: 0.5rem;
+  }
+
+  /* Upload area */
+  .upload-area {
+    min-height: 130px;
+  }
+
+  .upload-icon {
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  .footer-links a {
+    font-size: 0.75rem;
+  }
+
+  /* Fix nav height for very small screens */
+  .nav-inner {
+    height: 54px;
+  }
+
+  /* Bump section padding down */
+  .section {
+    padding: 40px 0;
+  }
+}
