@@ -1,0 +1,91 @@
+:root {
+  color-scheme: dark;
+  --bg-primary: #080808;
+  --bg-secondary: #0e0e0e;
+  --bg-card: #131313;
+  --bg-card-hover: #181818;
+  --bg-light: #f7f5f0;
+  --bg-light-off: #ebe7dc;
+  --bg-overlay: rgba(8, 8, 8, 0.92);
+  --text-primary: #edeae3;
+  --text-secondary: #8a8880;
+  --text-muted: #606060;
+  --text-ghost: #4a4a4a;
+  --text-dark: #2a2a2a;
+  --text-dark-secondary: #3a3830;
+  --accent: #c9a84c;
+  --accent-dim: #a0832a;
+  --accent-glow: rgba(201, 168, 76, 0.08);
+  --border-void: #111111;
+  --border-dark: #1e1e1e;
+  --border-mid: #2a2a2a;
+  --border-accent: #c9a84c;
+  --border-light: #e0ddd6;
+  --error: #b05555;
+  --success: #5a8a5a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: anywhere;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+[hidden] {
+  display: none !important;
+}
