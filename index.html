@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Security Meta Tags -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.rss2json.com; object-src 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description"
+    content="Nyra is a dark editorial astrology app for daily readings, tarot, horoscopes, birth charts, wardrobe guidance, and palmistry." />
+  <title>Nyra</title>
+  <link rel="icon" href="assets/Stellar_LOGO.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <nav id="navbar" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <img src="assets/Stellar_LOGO.png" alt="Nyra" class="logo-img" />
+        <span class="logo-wordmark">NYRA</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#daily">Cosmic Insights</a></li>
+        <li><a href="#tarot">Tarot</a></li>
+        <li><a href="#horoscope">Horoscope</a></li>
+        <li><a href="#birthchart">Birth Chart</a></li>
+        <li><a href="#wardrobe">Wardrobe</a></li>
+        <li><a href="#palmistry">Palmistry</a></li>
+        <li><a href="#info">Info</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-ghost" type="button"
+          onclick="document.getElementById('coming-soon-modal').hidden = false; document.body.classList.add('modal-open');">Open
+          App</button>
+      </div>
+      <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="personal-banner" id="personal-banner" hidden></div>
+
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="mobile-close" type="button" aria-label="Close">✕</button>
+    <ul role="list">
+      <li><a href="#daily">Cosmic Insights</a></li>
+      <li><a href="#tarot">Tarot</a></li>
+      <li><a href="#horoscope">Horoscope</a></li>
+      <li><a href="#birthchart">Birth Chart</a></li>
+      <li><a href="#wardrobe">Wardrobe</a></li>
+      <li><a href="#palmistry">Palmistry</a></li>
+      <li><a href="#info">Info</a></li>
+      <li><button class="btn btn-accent btn-full" type="button"
+          onclick="document.getElementById('coming-soon-modal').hidden = false; document.body.classList.add('modal-open');">Open
+          App</button></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <span class="hero-date" aria-label="Current astrological date">SUNDAY · 26 APRIL 2026 · ☉ IN TAURUS</span>
+        <h1 class="hero-headline">Readings from<br /><em>the nebula.</em></h1>
+        <p class="hero-sub">A real-time astrology app for daily readings, tarot, charts, style, and the strange weather
+          between people.</p>
+        <div class="hero-cta">
+          <button class="btn btn-accent" id="hero-begin-btn" type="button"
+            onclick="document.getElementById('coming-soon-modal').hidden = false; document.body.classList.add('modal-open');">Open
+            App</button>
+          <a class="btn btn-ghost" href="#info">Explore the Library</a>
+        </div>
+        <div class="app-preview" aria-label="Nyra app preview">
+          <div class="preview-phone">
+            <div class="preview-topline">NYRA · LIVE</div>
+            <div class="preview-reading">The pattern is not subtle. Something asks to be named before it can change.
+            </div>
+            <div class="preview-grid">
+              <span>☉ SELF</span><span>☽ MOOD</span><span>♀ LOVE</span><span>♃ GROWTH</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-glyphs" aria-hidden="true">
+          <span>☉</span><span class="dot">·</span><span>☽</span><span class="dot">·</span><span>♀</span><span
+            class="dot">·</span><span>♂</span><span class="dot">·</span><span>♃</span><span
+            class="dot">·</span><span>♄</span>
+        </div>
+        <div class="hero-drop-line" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section daily" id="daily">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">● Cosmic Insights</span>
+          <h2 class="section-headline"><em>Today's Cosmic Weather</em></h2>
+          <p class="section-sub">Start with the collective weather. Add birth data only when you want the reading to get
+            personal.</p>
+        </div>
+        <div class="planet-bar reveal" aria-label="Current planet positions"></div>
+        <div class="domain-grid" aria-live="polite"></div>
+        <div class="soft-personalize reveal">
+          <span>Want the chart underneath this?</span>
+          <button class="inline-personalize" id="birth-data-btn" type="button">Add birth data</button>
+        </div>
+        <p class="daily-refresh-note reveal">✦ Readings refresh with each planetary transit · Generated for your natal
+          chart</p>
+      </div>
+    </section>
+
+    <section class="section tarot" id="tarot">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">● TAROT</span>
+          <h2 class="section-headline">Pull Your Card</h2>
+          <p class="section-sub">One card. One question. Let the deck speak.</p>
+        </div>
+        <div class="tarot-stage-split reveal">
+          <div class="tarot-cards-col">
+            <div class="card-container card-animated">
+              <img src="assets/tarot-card-1.png" alt="Tarot Card" class="tarot-card-img" />
+            </div>
+            <div class="card-container card-static">
+              <img src="assets/tarot-card-2.png" alt="Tarot Card" class="tarot-card-img" />
+            </div>
+          </div>
+          <div class="tarot-cta-col">
+            <p class="card-prompt" id="card-prompt">TAROT READINGS ARE ONLY AVAILABLE IN THE APP</p>
+            <button class="btn btn-accent" id="pull-btn" type="button"
+              onclick="document.getElementById('coming-soon-modal').hidden = false; document.body.classList.add('modal-open');">Get
+              the App</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section horoscope" id="horoscope">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">● HOROSCOPE</span>
+          <h2 class="section-headline">Your Sign Today</h2>
+          <p class="section-sub">Select your sun sign for today's reading.</p>
+        </div>
+        <div class="zodiac-grid reveal" id="zodiac-grid"></div>
+        <div class="horoscope-panel reveal" id="horoscope-panel" hidden aria-live="polite">
+          <div class="horoscope-header">
+            <div class="horoscope-sign-row">
+              <h3 class="horoscope-sign-name" id="horoscope-sign-name"><em>Taurus</em></h3>
+              <span class="horoscope-glyph" id="horoscope-glyph">♉</span>
+            </div>
+            <div class="horoscope-meta">
+              <span id="horoscope-dates">APR 20 – MAY 20</span>
+              <span class="meta-sep">·</span>
+              <span id="horoscope-ruler">RULER: ♀ VENUS</span>
+            </div>
+          </div>
+          <div class="horoscope-rule"></div>
+          <p class="horoscope-main" id="horoscope-main"></p>
+          <div class="horoscope-subreadings">
+            <div class="subreading"><span class="subreading-label">LOVE</span>
+              <p class="subreading-text" id="h-love"></p>
+            </div>
+            <div class="subreading"><span class="subreading-label">WORK</span>
+              <p class="subreading-text" id="h-work"></p>
+            </div>
+            <div class="subreading"><span class="subreading-label">BODY</span>
+              <p class="subreading-text" id="h-body"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section birthchart" id="birthchart">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">● BIRTH CHART</span>
+          <h2 class="section-headline">Your Natal Map</h2>
+          <p class="section-sub">Enter your birth details. The chart is cast at the moment of your first breath.</p>
+        </div>
+        <div class="birthchart-layout reveal">
+          <div class="birthchart-form-col">
+            <form class="birthchart-form" id="birthchart-form">
+              <div class="form-group">
+                <label class="form-label" for="birth-date">BIRTH DATE</label>
+                <input type="date" id="birth-date" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="birth-time">BIRTH TIME</label>
+                <input type="time" id="birth-time" class="form-input" />
+                <label class="checkbox-label"><input type="checkbox" id="time-unknown" class="checkbox-input" /><span
+                    class="checkbox-text">Time unknown</span></label>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="birth-place">BIRTH PLACE</label>
+                <input type="text" id="birth-place" class="form-input" placeholder="Type a city…"
+                  data-place-autocomplete />
+              </div>
+              <button type="submit" class="btn btn-accent btn-full">Generate My Chart →</button>
+            </form>
+          </div>
+          <div class="birthchart-display-col">
+            <div class="chart-placeholder" id="chart-placeholder">
+              <span>YOUR CHART WILL APPEAR HERE</span>
+              <span class="glyphs-row" aria-hidden="true">♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</span>
+            </div>
+            <div class="chart-result" id="chart-result" hidden aria-live="polite">
+              <svg id="natal-chart-svg" viewBox="0 0 400 400" role="img" aria-label="Natal chart wheel"></svg>
+              <div class="big-three-bar" id="big-three-bar">
+                <div class="big-three-cell"><span class="big-three-label">☉ SUN</span><span class="big-three-value"
+                    id="b3-sun">—</span></div>
+                <div class="big-three-cell"><span class="big-three-label">☽ MOON</span><span class="big-three-value"
+                    id="b3-moon">—</span></div>
+                <div class="big-three-cell"><span class="big-three-label">ASC RISING</span><span class="big-three-value"
+                    id="b3-rising">—</span></div>
+              </div>
+              <div class="planet-table" id="planet-table"></div>
+              <p class="chart-summary" id="chart-summary"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wardrobe" id="wardrobe">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">● ASTRO WARDROBE</span>
+          <h2 class="section-headline">Dress for the Cosmos</h2>
+          <p class="section-sub">Today's planetary energy recommends what to wear.</p>
+        </div>
+        <div class="wardrobe-main reveal" aria-live="polite">
+          <div class="wardrobe-card">
+            <div class="wardrobe-planet-row"><span>☽ MOON IN SCORPIO · SUNDAY 26 APR</span></div>
+            <div class="wardrobe-colour-block">
+              <span class="wardrobe-colour-label">TODAY'S COLOUR</span>
+              <div class="wardrobe-colour-row"><span class="wardrobe-colour-name" id="w-colour-name">Deep
+                  Burgundy</span>
+                <div class="colour-swatch" id="w-swatch"></div>
+              </div>
+            </div>
+            <div class="wardrobe-rule"></div>
+            <p class="wardrobe-narrative" id="w-narrative"></p>
+            <div class="wardrobe-tags">
+              <div class="wardrobe-tag-row"><span class="wtag-label">TEXTURES</span><span class="wtag-value"
+                  id="w-textures"></span></div>
+              <div class="wardrobe-tag-row"><span class="wtag-label">AVOID</span><span class="wtag-value"
+                  id="w-avoid"></span></div>
+              <div class="wardrobe-tag-row"><span class="wtag-label">ACCESSORY</span><span class="wtag-value"
+                  id="w-accessory"></span></div>
+            </div>
+            <span class="wardrobe-refresh-note">☽ Updates with each Moon sign change</span>
+          </div>
+          <div class="wardrobe-timeline" id="wardrobe-timeline"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section palmistry" id="palmistry">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">● PALMISTRY</span>
+          <h2 class="section-headline">Read Your Lines</h2>
+          <p class="section-sub">Your hand holds a map. Let the AI decode what the lines reveal.</p>
+        </div>
+        <div class="tarot-stage-split reveal">
+          <div class="tarot-cards-col">
+            <div class="card-container palm-card-animated">
+              <img src="assets/palmistry-hero.png" alt="Mystical palm reading illustration" class="palm-hero-img" />
+            </div>
+          </div>
+          <div class="tarot-cta-col">
+            <p class="card-prompt">PALMISTRY READINGS ARE ONLY AVAILABLE IN THE APP</p>
+            <button class="btn btn-accent" type="button"
+              onclick="document.getElementById('coming-soon-modal').hidden = false; document.body.classList.add('modal-open');">Get
+              the App</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section info" id="info">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">● REFERENCE</span>
+          <h2 class="section-headline">The Library</h2>
+          <p class="section-sub">Everything you need to understand the language of the stars and cards.</p>
+        </div>
+        <div class="info-tabs reveal" role="tablist" aria-label="Reference library">
+          <button class="info-tab active" type="button" data-tab="zodiac">ZODIAC SIGNS</button>
+          <button class="info-tab" type="button" data-tab="tarot">TAROT CARDS</button>
+          <button class="info-tab" type="button" data-tab="planets">PLANETS & HOUSES</button>
+          <button class="info-tab" type="button" data-tab="aspects">ASPECTS</button>
+        </div>
+        <div class="info-content reveal" id="info-content"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#home" class="logo">
+          <img src="assets/Stellar_LOGO.png" alt="Nyra logo" class="logo-img" />
+          <span class="logo-wordmark">NYRA</span>
+        </a>
+        <p class="footer-tagline">Where the ancient meets the algorithmic.</p>
+        <p class="footer-small">© 2026 Nyra · All readings generated by AI · For reflection, not prediction.</p>
+      </div>
+      <div class="footer-links"><a href="#daily">Daily Astrology</a><a href="#tarot">Tarot</a><a
+          href="#horoscope">Horoscope</a><a href="#birthchart">Birth Chart</a><a href="#wardrobe">Astro Wardrobe</a><a
+          href="#palmistry">Palmistry</a></div>
+      <div class="footer-glyphs"><span>♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</span><span>☉ ☽ ♀ ♂ ♃ ♄ ♅ ♆</span></div>
+    </div>
+    <div class="footer-bottom">✦ NYRA · AI-powered astrology for the modern seeker</div>
+  </footer>
+
+  <div class="modal-overlay" id="birth-modal" hidden>
+    <div class="birth-modal-panel" role="dialog" aria-modal="true" aria-labelledby="birth-modal-title">
+      <div class="modal-header">
+        <h2 id="birth-modal-title">Your Birth Data</h2>
+        <button class="modal-close" id="modal-close" type="button" aria-label="Close">✕</button>
+      </div>
+      <form id="birth-modal-form">
+        <div class="form-group"><label class="form-label" for="modal-birth-date">BIRTH DATE</label><input type="date"
+            id="modal-birth-date" class="form-input" required /></div>
+        <div class="form-group"><label class="form-label" for="modal-birth-time">BIRTH TIME</label><input type="time"
+            id="modal-birth-time" class="form-input" /><label class="checkbox-label"><input type="checkbox"
+              id="modal-time-unknown" class="checkbox-input" /><span class="checkbox-text">Time unknown</span></label>
+        </div>
+        <div class="form-group"><label class="form-label" for="modal-birth-place">BIRTH PLACE</label><input type="text"
+            id="modal-birth-place" class="form-input" placeholder="Type a city…" data-place-autocomplete /></div>
+        <p class="modal-note">✦ Your data is stored locally in your browser and never transmitted.</p>
+        <button class="btn btn-accent btn-full" type="submit">Save & Personalize</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="coming-soon-modal" hidden>
+    <div class="birth-modal-panel" role="dialog" aria-modal="true" aria-labelledby="coming-soon-title"
+      style="max-width: 400px; text-align: center;">
+      <div class="modal-header">
+        <h2 id="coming-soon-title">Coming Soon</h2>
+        <button class="modal-close"
+          onclick="document.getElementById('coming-soon-modal').hidden = true; document.body.classList.remove('modal-open');"
+          type="button" aria-label="Close">✕</button>
+      </div>
+      <div style="padding: 10px 0;">
+        <img src="assets/coming-soon-pixel.png" alt="App Coming Soon"
+          style="border-radius: 8px; margin-bottom: 24px; width: 100%; border: 1px solid var(--border-mid);" />
+        <p class="modal-note"
+          style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 8px; font-family: 'IBM Plex Sans', sans-serif;">
+          The Nyra App is launching soon. Get ready to explore the nebula.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/place-autocomplete.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/daily.js"></script>
+  <script src="js/horoscope.js"></script>
+  <script src="js/birthchart.js"></script>
+  <script src="js/wardrobe.js"></script>
+  <script src="js/info.js"></script>
+  <script src="js/modal.js"></script>
+</body>
+
+</html>
