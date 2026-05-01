@@ -7,9 +7,9 @@ function generateLocalChart(date, time) {
   const moon = signNames[Math.abs(Math.floor(seed + 4)) % 12];
   const rising = time ? signNames[Math.abs(Math.floor(Number(time.split(":")[0]) + seed)) % 12] : null;
   const planetNames = [
-    ["☉", "Sun", sun], ["☽", "Moon", moon], ["☿", "Mercury", signNames[(signNames.indexOf(sun) + 11) % 12]],
-    ["♀", "Venus", signNames[(signNames.indexOf(sun) + 1) % 12]], ["♂", "Mars", signNames[(signNames.indexOf(sun) + 2) % 12]],
-    ["♃", "Jupiter", "Gemini"], ["♄", "Saturn", "Pisces"], ["♅", "Uranus", "Taurus"], ["♆", "Neptune", "Pisces"], ["♇", "Pluto", "Aquarius"]
+    ["☉\uFE0E", "Sun", sun], ["☽\uFE0E", "Moon", moon], ["☿\uFE0E", "Mercury", signNames[(signNames.indexOf(sun) + 11) % 12]],
+    ["♀\uFE0E", "Venus", signNames[(signNames.indexOf(sun) + 1) % 12]], ["♂\uFE0E", "Mars", signNames[(signNames.indexOf(sun) + 2) % 12]],
+    ["♃\uFE0E", "Jupiter", "Gemini"], ["♄\uFE0E", "Saturn", "Pisces"], ["♅\uFE0E", "Uranus", "Taurus"], ["♆\uFE0E", "Neptune", "Pisces"], ["♇\uFE0E", "Pluto", "Aquarius"]
   ];
   const planets = planetNames.map(([glyph, name, sign], index) => ({
     glyph,

@@ -3,7 +3,7 @@ function formatDateLine() {
   const weekday = now.toLocaleDateString("en-US", { weekday: "long" }).toUpperCase();
   const day = String(now.getDate()).padStart(2, "0");
   const month = now.toLocaleDateString("en-US", { month: "long" }).toUpperCase();
-  return `${weekday} · ${day} ${month} ${now.getFullYear()} · ☉ IN TAURUS`;
+  return `${weekday} · ${day} ${month} ${now.getFullYear()} · ☉\uFE0E IN TAURUS`;
 }
 
 function initReveal() {
@@ -43,7 +43,7 @@ function getSignFromDate(dateString) {
 function updatePersonalizationBanner(chart) {
   const banner = document.getElementById("personal-banner");
   if (!banner || !chart) return;
-  banner.textContent = `☉ Reading for: ${chart.sun_sign} Sun · ${chart.moon_sign} Moon · ${chart.rising_sign || "Unknown"} Rising`;
+  banner.textContent = `☉\uFE0E Reading for: ${chart.sun_sign} Sun · ${chart.moon_sign} Moon · ${chart.rising_sign || "Unknown"} Rising`;
   banner.hidden = false;
 }
 
