@@ -1402,3 +1402,18 @@
   100% { opacity: 1; }
 }
 
+
+/* Force monochrome text rendering for all astrological glyphs on iOS/Android */
+.planet-cell .glyph,
+.zodiac-glyph,
+.horoscope-glyph,
+.glyphs-row,
+.palm-glyphs,
+.timeline-glyph,
+.library-glyph,
+.footer-glyphs span,
+.hero-glyphs span,
+.wardrobe-planet-row span {
+  font-family: "IBM Plex Mono", "Apple Symbols", "Segoe UI Symbol", "Noto Sans Symbols", "DejaVu Sans", monospace !important;
+  font-variant-emoji: text !important;
+}
