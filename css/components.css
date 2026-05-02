@@ -843,6 +843,140 @@
   color: var(--text-secondary);
 }
 
+/* COMPATIBILITY */
+.compatibility-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+@media (min-width: 900px) {
+  .compatibility-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.compatibility-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 600px) {
+  .compatibility-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.person-title {
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 8px;
+}
+
+.synastry-overview {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  border: 1px solid var(--border-accent);
+  background: var(--bg-card);
+}
+
+#synastry-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+
+#synastry-sub {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.synastry-factors {
+  border: 1px solid var(--border-dark);
+  margin-bottom: 30px;
+}
+
+.synastry-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 20px 1fr;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-dark);
+  color: var(--text-secondary);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.synastry-row:last-child {
+  border-bottom: 0;
+}
+
+.synastry-label {
+  text-align: left;
+  color: var(--text-muted);
+}
+.vs {
+  color: var(--border-mid);
+  font-size: 0.625rem;
+}
+
+.synastry-aspects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.aspect-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 8px;
+}
+
+.aspect-title.harmonious {
+  color: var(--accent);
+}
+.aspect-title.challenging {
+  color: #c9a797; /* a muted tone for friction */
+}
+
+.aspect-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.aspect-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.aspect-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 0.5rem;
+}
+.aspect-title.harmonious + .aspect-list li::before {
+  color: var(--accent);
+}
+.aspect-title.challenging + .aspect-list li::before {
+  color: #c9a797;
+}
+
 .wardrobe-main {
   max-width: 760px;
   margin: 0 auto;
